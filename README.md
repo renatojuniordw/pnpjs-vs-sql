@@ -44,6 +44,5 @@ Documento criado, visando o melhor entendimento da biblioteca PNP JS, comparando
 Para ambos os casos é necessário informar a origem (lista/tabela), levando em consideração a estrutura já estabelecida. Diferente do SQL, no PNP não é obrigatório declarar todas as colunas, mesmo ela sendo obrigatórias.
 |SQL| PNP |
 |--|--|
-| ```SQL INSERT  INTO  users (user_id, age, NAME) VALUES  ("f62255a8259f", 30, “peter”)``` | ```js pnp.sp.web.lists.getByTitle("users").items**.add**({user_id: "f62255a8259f", age: 30, name: "Peter"}).then(function (itemAdicionado) { })
-``` |
+| ```SQL INSERT  INTO  users (user_id, age, NAME) VALUES  ("f62255a8259f", 30, “peter”)``` | ```js pnp.sp.web.lists.getByTitle("users").items**.add**({user_id: "f62255a8259f", age: 30, name: "Peter"}).then(function (itemAdicionado) { }) ``` |
 
