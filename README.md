@@ -52,8 +52,7 @@ NAME)
 VALUES  ("f62255a8259f", 
 30, 
 “peter”); 
-``` | 
-```js
+``` | ```js
 pnp.sp.web.lists.getByTitle("users").items**.add**({
 user_id: "f62255a8259f", 
 age: 30, 
