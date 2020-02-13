@@ -83,11 +83,25 @@ Para ambos os casos é necessário informar a origem (lista/tabela), levando em 
 |--|--|
 | ```SELECT * FROM users LIMIT 5 ``` | ```pnp.sp.web.lists.getByTitle("users").items.top(5).get().then(function (result) { }); ``` |
 
-## Get() vs GetAll()
+##### Get() vs GetAll()
 |Item| get() | getAll() |
 |--|--|--|
 |Quantidade de itens retornado |Até 100 itens |Mais de 100 itens |
 |Funciona o orderBy() | Sim | Não |
 |Funciona o top() | Sim | Não |
 
+### UPDATE 
+No update do PNP, o getById() serve como condição (where), ou seja, só será atualizado o item no qual o ID (da lista) foi informado.
+|SQL| PNP |
+|--|--|
+| ```UPDATE users SET age = 18 WHERE id = 10 ``` | ```pnp.sp.web.lists.getByTitle("users").items.getById(10).update ({ age: 18 }).then(function (itemAtualizado) { })  ``` |
 
+### DELETE 
+|SQL| PNP |
+|--|--|
+| ```DELETE FROM users WHERE id = 10 ``` | ```pnp.sp.web.lists.getByTitle("users").items.getById(10).delete().then(function(itemDeletado) { })  ``` |
+
+### JOINS 
+|SQL| PNP |
+|--|--|
+| ```SELECT * FROM posts JOIN users ON posts.user_id = users.id ``` | ```pnp.sp.web.lists.getByTitle("posts").items.expand(“users”).filter(“ID eq 10 and users/id eq 10”).get().then(function (resultJoin) { })  ``` |
