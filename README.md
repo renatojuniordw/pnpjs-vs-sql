@@ -59,3 +59,27 @@ Para ambos os casos é necessário informar a origem (lista/tabela), levando em 
 |SQL| PNP |
 |--|--|
 | ```SELECT _user_id, name_ FROM users``` | ```pnp.sp.web.lists.getByTitle("users").items.select(“_user_id, name_”).get().then(function (result) { }) ``` |
+
+|SQL| PNP |
+|--|--|
+| ```SELECT * FROM users WHERE name = “Peter” and age = 30``` | ```pnp.sp.web.lists.getByTitle("users").items.filter(“name eq ‘Peter’ and age eq 30”).get().then(function (result) { }); ``` |
+
+#####  Consultar dados que determina se uma cadeia de caracteres específica corresponde a um padrão especificado
+|SQL| PNP |
+|--|--|
+| ```SELECT * FROM users WHERE name LIKE “P%”``` | ```pnp.sp.web.lists.getByTitle("users").items.filter("substringof('P', name).get().then(function (result) { }); ``` |
+ 
+#####  Ordenar retorno:
+|SQL| PNP |
+|--|--|
+| ```SELECT * FROM users ORDER BY name DESC/ASC ``` | ```pnp.sp.web.lists.getByTitle("users").items.orderBy(“name”, true/false).get().then(function (result) { }); ``` |
+ 
+|SQL| PNP |
+|--|--|
+| ```SELECT * FROM users WHERE name = "Peter” ORDER BY name DESC ``` | ```pnp.sp.web.lists.getByTitle("users").items.filter(“name eq ‘Peter’”).orderBy(“name”, false).get().then(function (result) { }); ``` |
+
+#####  Limitar retorno da consulta:
+|SQL| PNP |
+|--|--|
+| ```SELECT * FROM users LIMIT 5 ``` | ```pnp.sp.web.lists.getByTitle("users").items.top(5).get().then(function (result) { }); ``` |
+
