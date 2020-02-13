@@ -105,3 +105,6 @@ No update do PNP, o getById() serve como condição (where), ou seja, só será 
 |SQL| PNP |
 |--|--|
 |```SELECT * FROM posts JOIN users ON posts.user_id = users.id ``` | ```pnp.sp.web.lists.getByTitle("posts").items.expand(“users”).filter(“ID eq 10 and users/id eq 10”).get().then(function (resultJoin) { })  ``` |
+
+
+By: https://www.linkedin.com/in/renato-bezerra/
