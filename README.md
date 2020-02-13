@@ -3,7 +3,7 @@
 
 Documento criado, visando o melhor entendimento da biblioteca PNP JS, comparando-a com o SQL que é uma linguagem padrão de consulta muito usada.
 
-  ## PnPJs, o que é ?
+## PnPJs, o que é ?
   
 
 > O PnPjs é uma coleção de bibliotecas fluentes para consumir APIs
@@ -82,4 +82,12 @@ Para ambos os casos é necessário informar a origem (lista/tabela), levando em 
 |SQL| PNP |
 |--|--|
 | ```SELECT * FROM users LIMIT 5 ``` | ```pnp.sp.web.lists.getByTitle("users").items.top(5).get().then(function (result) { }); ``` |
+
+## Get() vs GetAll()
+|Item| get() | getAll() |
+|--|--|--|
+|Quantidade de itens retornado |Até 100 itens |Mais de 100 itens |
+|Funciona o orderBy() | Sim | Não |
+|Funciona o top() | Sim | Não |
+
 
