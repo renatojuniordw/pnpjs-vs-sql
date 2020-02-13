@@ -51,7 +51,11 @@ Para ambos os casos é necessário informar a origem (lista/tabela), levando em 
 Para ambos os casos é necessário informar a origem (lista/tabela), levando em consideração a estrutura já estabelecida.
 
 #####  Consultar todos os itens, trazendo todas as colunas:
+|SQL| PNP |
+|--|--|
 | ```SELECT * FROM users``` | ```pnp.sp.web.lists.getByTitle("users").items.get().then(function (result) { }) ``` |
 
-#####  Consultar todos os itens, especificando coluna(s)
+#####  Consultar todos os itens, especificando coluna(s):
+|SQL| PNP |
+|--|--|
 | ```SELECT _user_id, name_ FROM users``` | ```pnp.sp.web.lists.getByTitle("users").items.select(“_user_id, name_”).get().then(function (result) { }) ``` |
