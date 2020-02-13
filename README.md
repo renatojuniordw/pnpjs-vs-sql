@@ -1,3 +1,4 @@
+
 # PnPJs vs SQL
 
 Documento criado, visando o melhor entendimento da biblioteca PNP JS, comparando-a com o SQL que é uma linguagem padrão de consulta muito usada.
@@ -46,3 +47,11 @@ Para ambos os casos é necessário informar a origem (lista/tabela), levando em 
 |--|--|
 | ```INSERT  INTO  users (user_id, age, NAME) VALUES  ("f62255a8259f", 30, “peter”)``` | ``` pnp.sp.web.lists.getByTitle("users").items.add({user_id: "f62255a8259f", age: 30, name: "Peter"}).then(function (itemAdicionado) { }) ``` |
 
+### SELECT
+Para ambos os casos é necessário informar a origem (lista/tabela), levando em consideração a estrutura já estabelecida.
+
+#####  Consultar todos os itens, trazendo todas as colunas:
+| ```SELECT * FROM users``` | ```pnp.sp.web.lists.getByTitle("users").items.get().then(function (result) { }) ``` |
+
+#####  Consultar todos os itens, especificando coluna(s)
+| ```SELECT _user_id, name_ FROM users``` | ```pnp.sp.web.lists.getByTitle("users").items.select(“_user_id, name_”).get().then(function (result) { }) ``` |
