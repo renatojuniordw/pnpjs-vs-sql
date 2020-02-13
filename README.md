@@ -45,7 +45,7 @@ Documento criado, visando o melhor entendimento da biblioteca PNP JS, comparando
 Para ambos os casos é necessário informar a origem (lista/tabela), levando em consideração a estrutura já estabelecida. Diferente do SQL, no PNP não é obrigatório declarar todas as colunas, mesmo ela sendo obrigatórias.
 |SQL| PNP |
 |--|--|
-| ```INSERT  INTO  users (user_id, age, NAME) VALUES  ("f62255a8259f", 30, “peter”)``` | ``` pnp.sp.web.lists.getByTitle("users").items.add({user_id: "f62255a8259f", age: 30, name: "Peter"}).then(function (itemAdicionado) { }) ``` |
+|```INSERT  INTO  users (user_id, age, NAME) VALUES  ("f62255a8259f", 30, “peter”)``` |``` pnp.sp.web.lists.getByTitle("users").items.add({user_id: "f62255a8259f", age: 30, name: "Peter"}).then(function (itemAdicionado) { }) ``` |
 
 ### SELECT
 Para ambos os casos é necessário informar a origem (lista/tabela), levando em consideração a estrutura já estabelecida.
@@ -53,35 +53,35 @@ Para ambos os casos é necessário informar a origem (lista/tabela), levando em 
 #####  Consultar todos os itens, trazendo todas as colunas:
 |SQL| PNP |
 |--|--|
-| ```SELECT * FROM users``` | ```pnp.sp.web.lists.getByTitle("users").items.get().then(function (result) { }) ``` |
+|```SELECT * FROM users``` | ```pnp.sp.web.lists.getByTitle("users").items.get().then(function (result) { }) ``` |
 
 #####  Consultar todos os itens, especificando coluna(s):
 |SQL| PNP |
 |--|--|
-| ```SELECT _user_id, name_ FROM users``` | ```pnp.sp.web.lists.getByTitle("users").items.select(“_user_id, name_”).get().then(function (result) { }) ``` |
+|```SELECT _user_id, name_ FROM users``` |```pnp.sp.web.lists.getByTitle("users").items.select(“_user_id, name_”).get().then(function (result) { }) ``` |
 
 |SQL| PNP |
 |--|--|
-| ```SELECT * FROM users WHERE name = “Peter” and age = 30``` | ```pnp.sp.web.lists.getByTitle("users").items.filter(“name eq ‘Peter’ and age eq 30”).get().then(function (result) { }); ``` |
+|```SELECT * FROM users WHERE name = “Peter” and age = 30``` |```pnp.sp.web.lists.getByTitle("users").items.filter(“name eq ‘Peter’ and age eq 30”).get().then(function (result) { }); ``` |
 
 #####  Consultar dados que determina se uma cadeia de caracteres específica corresponde a um padrão especificado
 |SQL| PNP |
 |--|--|
-| ```SELECT * FROM users WHERE name LIKE “P%”``` | ```pnp.sp.web.lists.getByTitle("users").items.filter("substringof('P', name).get().then(function (result) { }); ``` |
+|```SELECT * FROM users WHERE name LIKE “P%”``` |```pnp.sp.web.lists.getByTitle("users").items.filter("substringof('P', name).get().then(function (result) { }); ``` |
  
 #####  Ordenar retorno:
 |SQL| PNP |
 |--|--|
-| ```SELECT * FROM users ORDER BY name DESC/ASC ``` | ```pnp.sp.web.lists.getByTitle("users").items.orderBy(“name”, true/false).get().then(function (result) { }); ``` |
+| ```SELECT * FROM users ORDER BY name DESC/ASC ``` |```pnp.sp.web.lists.getByTitle("users").items.orderBy(“name”, true/false).get().then(function (result) { }); ``` |
  
 |SQL| PNP |
 |--|--|
-| ```SELECT * FROM users WHERE name = "Peter” ORDER BY name DESC ``` | ```pnp.sp.web.lists.getByTitle("users").items.filter(“name eq ‘Peter’”).orderBy(“name”, false).get().then(function (result) { }); ``` |
+|```SELECT * FROM users WHERE name = "Peter” ORDER BY name DESC ``` |```pnp.sp.web.lists.getByTitle("users").items.filter(“name eq ‘Peter’”).orderBy(“name”, false).get().then(function (result) { }); ``` |
 
 #####  Limitar retorno da consulta:
 |SQL| PNP |
 |--|--|
-| ```SELECT * FROM users LIMIT 5 ``` | ```pnp.sp.web.lists.getByTitle("users").items.top(5).get().then(function (result) { }); ``` |
+|```SELECT * FROM users LIMIT 5 ``` | ```pnp.sp.web.lists.getByTitle("users").items.top(5).get().then(function (result) { }); ``` |
 
 ##### Get() vs GetAll()
 |Item| get() | getAll() |
@@ -94,14 +94,14 @@ Para ambos os casos é necessário informar a origem (lista/tabela), levando em 
 No update do PNP, o getById() serve como condição (where), ou seja, só será atualizado o item no qual o ID (da lista) foi informado.
 |SQL| PNP |
 |--|--|
-| ```UPDATE users SET age = 18 WHERE id = 10 ``` | ```pnp.sp.web.lists.getByTitle("users").items.getById(10).update ({ age: 18 }).then(function (itemAtualizado) { })  ``` |
+|```UPDATE users SET age = 18 WHERE id = 10 ``` |```pnp.sp.web.lists.getByTitle("users").items.getById(10).update ({ age: 18 }).then(function (itemAtualizado) { })  ``` |
 
 ### DELETE 
 |SQL| PNP |
 |--|--|
-| ```DELETE FROM users WHERE id = 10 ``` | ```pnp.sp.web.lists.getByTitle("users").items.getById(10).delete().then(function(itemDeletado) { })  ``` |
+|```DELETE FROM users WHERE id = 10 ``` |```pnp.sp.web.lists.getByTitle("users").items.getById(10).delete().then(function(itemDeletado) { })  ``` |
 
 ### JOINS 
 |SQL| PNP |
 |--|--|
-| ```SELECT * FROM posts JOIN users ON posts.user_id = users.id ``` | ```pnp.sp.web.lists.getByTitle("posts").items.expand(“users”).filter(“ID eq 10 and users/id eq 10”).get().then(function (resultJoin) { })  ``` |
+|```SELECT * FROM posts JOIN users ON posts.user_id = users.id ``` | ```pnp.sp.web.lists.getByTitle("posts").items.expand(“users”).filter(“ID eq 10 and users/id eq 10”).get().then(function (resultJoin) { })  ``` |
