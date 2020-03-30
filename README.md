@@ -4,7 +4,6 @@
 Documento criado, visando o melhor entendimento da biblioteca PNP JS, comparando-a com o SQL que é uma linguagem padrão de consulta muito usada.
 
 ## PnPJs, o que é ?
-  
 
 > O PnPjs é uma coleção de bibliotecas fluentes para consumir APIs
 > REST do SharePoint, Graph e Office 365 de uma maneira segura. Você
@@ -25,6 +24,11 @@ Documento criado, visando o melhor entendimento da biblioteca PNP JS, comparando
 | FOREIGN KEY|Lookup|
 | Join|Expand()|
 | From |getByTitle()|
+
+###Observações gerais
+Dependendo da versão do PnP JS, devesse iniciar a chamada com o “$”(cifrão).    
+Exemplo: ```$pnp.sp.web``` 
+
 
 ### Comparando escalares em Perl vs SQL
 
