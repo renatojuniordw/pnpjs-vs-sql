@@ -25,7 +25,7 @@ Documento criado, visando o melhor entendimento da biblioteca PNP JS, comparando
 | Join|Expand()|
 | From |getByTitle()|
 
-###Observações gerais
+### Observações gerais
 Dependendo da versão do PnP JS, devesse iniciar a chamada com o “$”(cifrão).    
 Exemplo: ```$pnp.sp.web``` 
 
