@@ -133,5 +133,7 @@ Documentação completa e oficial do PnP: https://pnp.github.io/pnpjs/sp/items/
 ##### By
 
 Portfólio: http://bit.ly/portfoliorenatojunior
+
 LinkedIn: https://www.linkedin.com/in/renato-bezerra
+
 Medium: https://medium.com/@renatojuniordw/pnpjs-vs-sql-2406e6916e3e
