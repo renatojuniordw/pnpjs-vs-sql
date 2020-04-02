@@ -127,12 +127,11 @@ Para obter campos relacionados.
 |--|--|
 |```SELECT * FROM posts JOIN users ON posts.user_id = users.id ``` | ```pnp.sp.web.lists.getByTitle("posts").items.expand(“users”).filter(“ID eq 10 and users/id eq 10”).get().then(function (resultJoin) { })  ``` |
 
-Documentação completa e oficial do PnP: https://pnp.github.io/pnpjs/sp/items/#get-all-items
+Documentação completa e oficial do PnP: https://pnp.github.io/pnpjs/sp/items/
 
 
+##### By
 
 Portfólio: http://bit.ly/portfoliorenatojunior
-
 LinkedIn: https://www.linkedin.com/in/renato-bezerra
-
 Medium: https://medium.com/@renatojuniordw/pnpjs-vs-sql-2406e6916e3e
