@@ -1,4 +1,3 @@
-
 # PnPJs vs SQL
 
 Quase todos os sistemas desenvolvidos em SharePoint online envolvem PnP JS, existem diversas dúvidas de como usar essa biblioteca. Vendo a dificuldade de colegas de trabalho, ao usá-la, resolvi escrever este artigo colocando o PnP lado a lado do SQL, fazendo breves comparações entre ambos.
@@ -134,3 +133,4 @@ Documentação completa e oficial do PnP: https://pnp.github.io/pnpjs/sp/items/#
 
 Portfólio: http://bit.ly/portfoliorenatojunior
 LinkedIn: https://www.linkedin.com/in/renato-bezerra
+Medium: https://medium.com/@renatojuniordw/pnpjs-vs-sql-2406e6916e3e
